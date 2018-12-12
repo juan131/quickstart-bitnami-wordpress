@@ -769,6 +769,12 @@
                     "KeyPairName": {
                         "Ref": "KeyPairName"
                     },
+                    "ElastiCacheEndpointAddress": {
+                        "Fn::GetAtt": [
+                            "ElastiCacheStack",
+                            "Outputs.ElastiCacheClusterEndPoint"
+                        ]
+                    },
                     "DBEndpointAddress": {
                         "Fn::GetAtt": [
                             "RDSAuroraStack",
