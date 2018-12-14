@@ -324,7 +324,7 @@
             "Type": "String",
             "Default": ""
         },
-        "EnableElastiCache": {
+        "ElastiCacheEnable": {
             "Description": "Enable ElastiCache",
             "AllowedValues": [
                 "true",
@@ -381,7 +381,7 @@
             "RuleCondition": {
                 "Fn::Equals": [
                     {
-                        "Ref": "EnableElastiCache"
+                        "Ref": "ElastiCacheEnable"
                     },
                     "true"
                 ]
@@ -400,7 +400,7 @@
                             }
                         ]
                     },
-                    "AssertDescription": "ElastiCacheClusterId cannot be empty when EnableElastiCache is true."
+                    "AssertDescription": "ElastiCacheClusterId cannot be empty when ElastiCacheEnable is true."
                 }
             ]
         }
@@ -446,10 +446,10 @@
                 }
             ]
         },
-        "EnableElastiCacheCondition": {
+        "ElastiCacheEnableCondition": {
             "Fn::Equals": [
                 {
-                    "Ref": "EnableElastiCache"
+                    "Ref": "ElastiCacheEnable"
                 },
                 "true"
             ]
@@ -550,7 +550,7 @@
         },
         "DescribeElastiCachePolicy": {
             "Type": "AWS::IAM::Policy",
-            "Condition": "EnableElastiCacheCondition",
+            "Condition": "ElastiCacheEnableCondition",
             "Properties": {
                 "PolicyName": "DescribeElastiCacheClusterPolicy",
                 "PolicyDocument": {
