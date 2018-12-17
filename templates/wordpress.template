@@ -826,7 +826,7 @@
                     "CertificateArn": {
                         "Ref": "CertificateArn"
                     },
-                    "EnableElastiCache": {
+                    "ElastiCacheEnable": {
                         "Ref": "ElastiCacheEnable"
                     },
                     "ElastiCacheClusterId": {
